@@ -1,0 +1,9 @@
+[user]
+    name = Steven Kolb
+    email = sskolb@gmail.com
+[alias]
+    curbranch = !"/Users/steven/gitExtensions/git-curbranch"
+    lol = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''        %C(bold white)%s%C(reset) %C(white)- %an%C(reset)%n'
+    lola = !"git lol --all"
+    pam = !"git checkout $(git recent | fzf)"
+    sync = !"/Users/steven/gitExtensions/git-sync"

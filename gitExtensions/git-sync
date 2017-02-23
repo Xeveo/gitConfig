@@ -1,0 +1,24 @@
+#!/bin/bash
+branch=${1:-master}
+upstream=${2:-origin}
+
+echo "---"
+
+git checkout --quiet --detach
+
+git fetch $upstream $branch:$branch
+exitStatus=$?
+
+git checkout --quiet -
+
+if [ $exitStatus -eq 0 ]; then
+    echo "Updated '$branch' branch from '$upstream'"
+fi
+
+green=`tput setaf 2`
+nocolor=`tput sgr0`
+
+curBranch=$(git symbolic-ref --short -q HEAD)
+echo "Current Branch: ${green}$curBranch${nocolor}"
+echo "---"
+echo ""

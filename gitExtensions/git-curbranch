@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#colors
+green=`tput setaf 2`
+nocolor=`tput sgr0`
+
+curBranch=$(git symbolic-ref --short -q HEAD)
+echo "* ${green}$curBranch${nocolor}"
+echo ""
